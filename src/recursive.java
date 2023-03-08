@@ -11,12 +11,15 @@ public class recursive {
         System.out.print("Input number: ");
         n = radka.nextInt();
         System.out.println(Square(n));
+
         System.out.println();
         System.out.println("-----------------EXERCISE 2------------------");
         reverseSequence(radka);
+
         System.out.println();
         System.out.println("-----------------EXERCISE 3------------------");
         System.out.println(x(n));
+
         System.out.println();
         System.out.println("-----------------EXERCISE 4------------------");
         System.out.println("Enter a number: ");
@@ -25,6 +28,13 @@ public class recursive {
         System.out.println(countDigits(number));
         System.out.println("------SUM OF DIGITS------");
         System.out.println(sumDigits(number));
+
+        System.out.println();
+        System.out.println("-----------------EXERCISE 5------------------");
+        System.out.println("--------SUM WITH ONE--------");
+        System.out.println(sumWithOne(n));
+        System.out.println("-------MULTIPLICATION WITH ONE-----");
+        System.out.println(multiplicationWithOne(n));
 
 
     }
@@ -61,5 +71,14 @@ public class recursive {
     public static int sumDigits (int number) {
         if (number == 0) return 0;
         return (number % 10 + sumDigits(number / 10));
+    }
+    //----------EXERCISE 5--------------
+    public static int sumWithOne (int n) {
+        if (n == 0) return 0;
+        return n + sumWithOne(n - 1);
+    }
+    public static int multiplicationWithOne (int n) {
+        if (n == 0) return 0;
+        return 5 + multiplicationWithOne(n-1);
     }
 }
