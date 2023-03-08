@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class recursive {
@@ -40,6 +41,26 @@ public class recursive {
         System.out.println("-----------------EXERCISE 6------------------");
         System.out.println("---------BINARY REP OF " + n + "--------");
         System.out.println(integerToBinary(n));
+
+        System.out.println();
+        System.out.println("-----------------EXERCISE 7------------------");
+
+        System.out.println();
+        System.out.println("-----------------EXERCISE 8------------------");
+        int array[] = new int[5];
+        System.out.println("Array elements: ");
+        for (int i = 0; i < array.length; i ++) {
+            array[i] = radka.nextInt();
+        }
+        System.out.println("The sum of the array " + Arrays.toString(array) );
+        System.out.println(sumArray(array, array.length));
+
+        System.out.println();
+        System.out.println("-----------------EXERCISE 9------------------");
+        System.out.println("Is there any positive number in the array");
+        System.out.println(checkPositive(array));
+        System.out.println("Is there any negative number in the array");
+        System.out.println(checkNegative(array));
 
 
     }
@@ -90,5 +111,29 @@ public class recursive {
     public static int integerToBinary (int n) {
         if (n == 1) return 1;
         return integerToBinary(n / 2) * 10 + n % 2;
+    }
+    //----------EXERCISE 7--------------
+
+    //----------EXERCISE 8--------------
+    public static int sumArray (int arr[], int m) {
+        if (m <= 0) return 0;
+        return (sumArray(arr, m - 1) + arr[m-1]);
+    }
+    //----------EXERCISE 9--------------
+    public static boolean checkPositive (int arr[]) {
+        for (int i = 0; i <= arr.length; i ++) {
+            if (arr[i] > 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public static boolean checkNegative (int[] arr) {
+        for (int i = 0; i < arr.length; i ++) {
+            if (arr[i] < 0) {
+                return true;
+            }
+        }
+        return false;
     }
 }
