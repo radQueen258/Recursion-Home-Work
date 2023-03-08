@@ -9,11 +9,26 @@ public class recursive {
         System.out.print("Input number: ");
         n = radka.nextInt();
         System.out.println(Square(n));
+        System.out.println();
+        System.out.println("-----------------EXERCISE 2------------------");
+        reverseSequence(radka);
 
     }
     //------------EXERCISE 1--------------
     public static int Square (int n) {
       if (n == 0) return 0;
       return n * n;
+    }
+    //----------EXERCISE 2--------------
+    public static void reverseSequence(Scanner radka) {
+        //Enter number
+        System.out.println("Next number = ");
+        int x = radka.nextInt();
+        //Prove by 0
+        if (x == 0) return;
+        //Recursion
+        reverseSequence(radka);
+        //Take out number
+        System.out.println(x);
     }
 }
