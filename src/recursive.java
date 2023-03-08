@@ -36,6 +36,11 @@ public class recursive {
         System.out.println("-------MULTIPLICATION WITH ONE-----");
         System.out.println(multiplicationWithOne(n));
 
+        System.out.println();
+        System.out.println("-----------------EXERCISE 6------------------");
+        System.out.println("---------BINARY REP OF " + n + "--------");
+        System.out.println(integerToBinary(n));
+
 
     }
     //------------EXERCISE 1--------------
@@ -80,5 +85,10 @@ public class recursive {
     public static int multiplicationWithOne (int n) {
         if (n == 0) return 0;
         return 5 + multiplicationWithOne(n-1);
+    }
+    //----------EXERCISE 6--------------
+    public static int integerToBinary (int n) {
+        if (n == 1) return 1;
+        return integerToBinary(n / 2) * 10 + n % 2;
     }
 }
