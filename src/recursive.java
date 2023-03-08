@@ -12,6 +12,9 @@ public class recursive {
         System.out.println();
         System.out.println("-----------------EXERCISE 2------------------");
         reverseSequence(radka);
+        System.out.println();
+        System.out.println("-----------------EXERCISE 3------------------");
+        System.out.println(x(n));
 
     }
     //------------EXERCISE 1--------------
@@ -30,5 +33,10 @@ public class recursive {
         reverseSequence(radka);
         //Take out number
         System.out.println(x);
+    }
+    //----------EXERCISE 3--------------
+    public static double x (int n) {
+        if (n == 0) return 0;
+        return Math.sqrt(2.0 + x (n - 1));
     }
 }
