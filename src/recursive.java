@@ -1,8 +1,10 @@
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class recursive {
     static int counter = 0;
+    static Random any = new Random();
     public static void main(String[] args) {
         Scanner radka = new Scanner(System.in);
         int n, number = 0;
@@ -62,6 +64,23 @@ public class recursive {
         System.out.println("Is there any negative number in the array");
         System.out.println(checkNegative(array));
 
+        System.out.println();
+        System.out.println("-----------------EXERCISE 10------------------");
+        int [][] binary = new int[4][5];
+        for (int i = 0; i < 4; i ++) {
+            for (int j = 0; j < 5; j ++) {
+                binary[i][j] = any.nextInt(-5,10);
+            }
+        }
+        System.out.println("-----THE MATRIX-----");
+        for (int i = 0; i < binary.length; i ++) {
+            for (int j = 0; j < binary[i].length; j ++) {
+                System.out.println(binary[i][j]+ " ");
+            }
+            System.out.println();
+        }
+        System.out.println("The assigned number is in column: " + binarySearchRecursion(binary,n));
+
 
     }
     //------------EXERCISE 1--------------
@@ -115,12 +134,12 @@ public class recursive {
     //----------EXERCISE 7--------------
 
     //----------EXERCISE 8--------------
-    public static int sumArray (int arr[], int m) {
+    public static int sumArray (int [] arr, int m) {
         if (m <= 0) return 0;
         return (sumArray(arr, m - 1) + arr[m-1]);
     }
     //----------EXERCISE 9--------------
-    public static boolean checkPositive (int arr[]) {
+    public static boolean checkPositive (int [] arr) {
         for (int j : arr) {
             if (j > 0) {
                 return true;
@@ -136,4 +155,23 @@ public class recursive {
         }
         return false;
     }
+    //----------EXERCISE 10-------------
+    public static int binarySearchRecursion (int [][] matrix, int n) {
+        for (int i = 0; i < 4; i ++) {
+            for (int j = 0; j < 5; j++) {
+                if (matrix[i][0] == n)
+                    return 1;
+                if (matrix[i][1] == n)
+                    return 2;
+                if (matrix[i][2] == n)
+                    return 3;
+                if (matrix[i][3] == n)
+                    return 4;
+                if (matrix[i][4] == n)
+                    return 5;
+            }
+        }
+        return -1;
+    }
+
 }
