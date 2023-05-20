@@ -7,7 +7,7 @@ public class recursive {
     static Random any = new Random();
     public static void main(String[] args) {
         Scanner radka = new Scanner(System.in);
-        int n, number = 0;
+        int n, number ;
 
 
         System.out.println("-----------------EXERCISE 1------------------");
